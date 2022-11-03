@@ -1,0 +1,27 @@
+.activeOption {
+    background-color: #0004ff;
+    color: white;
+  }
+  
+  ul {
+    width: 50%;
+    padding-left: 15px;
+    overflow: auto;
+    height: 50vh;
+  }
+  
+  li {
+    color: black;
+  }
+  
+  .caret {
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border: 5px solid transparent;
+    cursor: pointer;
+  }
+  .caret.down {
+    border-top-color: black;
+  }
+  
