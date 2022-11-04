@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Options } from './options';
 
@@ -7,19 +7,25 @@ import { Options } from './options';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor() { }
+
   title = 'taskone';
   testForm: NgForm;
   isDropDownOpen: boolean = false;
   dropdown: string = '';
   
   optionsList: Options[] = [
-    { value: "option 1" },
-    { value: "option 2" },
-    { value: 'option 3' },
-    { value: 'option 4' },
-    { value: 'option 5' },
+    { value: "Angular" },
+    { value: "React JS" },
+    { value: 'Vue JS' },
+    { value: 'Flutter' },
+    { value: 'Android' },
   ];
+
+  ngOnInit(): void {
+   this.dropdown = this.optionsList[0].value; 
+  }
 
   toggleDropdown() {
     this.isDropDownOpen = !this.isDropDownOpen;
@@ -27,6 +33,5 @@ export class AppComponent {
 
   receiveOptions($event: any) {
     this.dropdown = $event;
-    console.log("parent:" + $event);
   }
 }

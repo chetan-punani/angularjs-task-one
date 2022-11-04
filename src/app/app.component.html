@@ -1,17 +1,21 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6">
-
+  <div class="row" class="first-row">
+    <h1>DropDown With parent-child component communication example</h1>
+  </div>
+  <div class="row" class="second-row">
+    <div class="col-md-6">    
       <form #testForm="ngForm">
         <div class="col-auto">
-          <div class="input-group mb-2" style="width:50%">
-            <input name="dropdown" class="form-control" type="text" [(ngModel)]="dropdown" (focus)="toggleDropdown()"/>
+          <div class="input-group mb-2" >
+            <label for="dropdown">Select Technology :  </label>
+            <input name="dropdown" class="form-control" type="text" [(ngModel)]="dropdown" (focus)="toggleDropdown()" />
           </div>
         </div>
 
-        <div class="list-group" *ngIf="isDropDownOpen">
+        <!-- <div class="list-group" *ngIf="isDropDownOpen">
           <app-customdropdown [options]="optionsList" (optionsEvent)="receiveOptions($event)"></app-customdropdown>
-        </div>
+        </div> -->
+        <app-customdropdown [options]="optionsList" (optionsEvent)="receiveOptions($event)"></app-customdropdown>
       </form>
 
     </div>

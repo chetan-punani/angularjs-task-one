@@ -1,6 +1,13 @@
-<ul class="list-group">
+<!-- <ul class="list-group">
   <li [ngClass]="item.isActive ? 'activeOption' : ''" (click)="selectOption($event, index)"
     *ngFor="let item of options; let index = index" class="item list-group-item">
     {{ item.value }}
   </li>
-</ul>
+</ul> -->
+
+<select class="list-group" #tech (change)="selectOption(tech.value)">
+  <option [ngClass]="item.isActive ? 'activeOption' : ''" 
+    *ngFor="let item of options; let index = index" class="item list-group-item">
+    {{ item.value }}
+  </option>
+</select>
